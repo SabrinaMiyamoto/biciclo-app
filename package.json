@@ -6,6 +6,10 @@
     "start": "ng serve",
     "build": "ng build"
   },
+  "assets": [
+  "src/favicon.ico",
+  "src/assets"
+],
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.2.0",
