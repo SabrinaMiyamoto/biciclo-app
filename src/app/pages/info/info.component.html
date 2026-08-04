@@ -1,0 +1,14 @@
+<div class="page info-page">
+  <h2>Informações</h2>
+  <p class="subtitle">Tudo que você precisa saber antes de pedalar.</p>
+
+  <div class="grid">
+    @for (card of cards; track card.titulo) {
+      <div class="info-card">
+        <span class="icon">{{ card.icon }}</span>
+        <strong>{{ card.titulo }}</strong>
+        <p>{{ card.descricao }}</p>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="page buscar-page">
+  <h2>Buscar</h2>
+
+  <div class="search-bar">
+    <span class="icon">🔍</span>
+    <input type="text" placeholder="Buscar por local, bairro ou tipo" [(ngModel)]="termo" name="termo" />
+  </div>
+
+  <div class="categorias">
+    @for (c of categorias; track c.key) {
+      <button class="chip" (click)="termo = c.key">
+        {{ c.icon }} {{ c.label }}
+      </button>
+    }
+  </div>
+
+  <div class="resultados">
+    @if (resultados.length === 0) {
+      <p class="empty">Nenhum resultado para "{{ termo }}".</p>
+    }
+    @for (r of resultados; track r.id) {
+      <a class="resultado-item" [routerLink]="['/pontos', r.id]">
+        <div>
+          <strong>{{ r.nome }}</strong>
+          <p>{{ r.bairro }} · {{ r.distanciaKm }} km</p>
+        </div>
+        <span class="chevron">›</span>
+      </a>
+    }
+  </div>
+</div>

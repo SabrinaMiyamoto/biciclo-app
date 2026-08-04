@@ -1,0 +1,35 @@
+<div class="login-page">
+  <div class="brand-panel">
+    <span class="logo-badge">🚲</span>
+    <h1>BICICLO<br><span>Floripa</span></h1>
+    <p>Seu app para pedalar por Floripa com autonomia e segurança.</p>
+  </div>
+
+  <div class="form-panel">
+    <form class="login-card" (ngSubmit)="entrar()">
+      <h2>Entrar</h2>
+      <p class="subtitle">Acesse para ver rotas, mapa e pontos de apoio.</p>
+
+      <label>
+        <span>E-mail</span>
+        <input type="email" placeholder="seuemail@exemplo.com" [(ngModel)]="email" name="email" />
+      </label>
+
+      <label>
+        <span>Senha</span>
+        <input type="password" placeholder="••••••••" [(ngModel)]="senha" name="senha" />
+      </label>
+
+      @if (erro) {
+        <p class="erro">{{ erro }}</p>
+      }
+
+      <a class="esqueci" href="javascript:void(0)">Esqueci minha senha</a>
+
+      <button type="submit" class="btn-primary full">Entrar</button>
+      <button type="button" class="btn-secondary full" (click)="entrarComoVisitante()">Entrar como visitante</button>
+
+      <p class="cadastro">Não tem conta? <a href="javascript:void(0)">Criar conta</a></p>
+    </form>
+  </div>
+</div>

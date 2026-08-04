@@ -1,0 +1,14 @@
+<header class="top-nav">
+  <a routerLink="/inicio" class="brand">
+    <span class="logo-badge">🚲</span>
+    <span class="brand-text">BICICLO<br><small>Floripa</small></span>
+  </a>
+  <nav class="links">
+    @for (link of links; track link.path) {
+      <a [routerLink]="link.path" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: link.path === '/inicio' }">
+        {{ link.label }}
+      </a>
+    }
+  </nav>
+  <a routerLink="/mapa" class="btn-primary cta">Começar</a>
+</header>

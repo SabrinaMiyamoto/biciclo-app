@@ -1,0 +1,24 @@
+<div class="page detalhe-page">
+  <a routerLink="/pontos" class="voltar">‹ Voltar</a>
+
+  @if (ponto) {
+    <div class="map-wrap">
+      <div #mapContainer class="leaflet-container-el"></div>
+    </div>
+
+    <div class="conteudo card">
+      <div class="cabecalho">
+        <h2>{{ ponto.nome }}</h2>
+        <span class="rating">★ {{ ponto.avaliacao }}</span>
+      </div>
+      <p class="categoria">{{ ponto.categoria }} · {{ ponto.bairro }}</p>
+      <p class="endereco">📍 {{ ponto.endereco }}</p>
+      <p class="descricao">{{ ponto.descricao }}</p>
+      <p class="distancia">{{ ponto.distanciaKm }} km de você</p>
+
+      <button class="btn-primary full" (click)="abrirRota()">Como chegar</button>
+    </div>
+  } @else {
+    <p class="empty">Ponto não encontrado.</p>
+  }
+</div>
