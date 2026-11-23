@@ -1,0 +1,9 @@
+target/
+*.class
+.idea/
+*.iml
+.vscode/
+.env
+*-firebase-adminsdk-*.json
+serviceAccount*.json
+application-local.yml

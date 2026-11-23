@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "cd front && npm ci",
+  "buildCommand": "cd front && npm run build",
+  "outputDirectory": "front/dist/biciclo-app/browser",
+  "rewrites": [{ "source": "/(.*)", "destination": "/index.html" }]
+}

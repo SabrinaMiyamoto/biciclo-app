@@ -1,1 +1,11 @@
-node_modules
+# Chaves e segredos
+*-firebase-adminsdk-*.json
+serviceAccount*.json
+.env
+.env.*
+# Build
+node_modules/
+dist/
+target/
+.angular/
+.DS_Store

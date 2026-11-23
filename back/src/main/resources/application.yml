@@ -1,0 +1,57 @@
+spring:
+  application:
+    name: biciclo-api
+  profiles:
+    active: dev
+
+  jackson:
+    default-property-inclusion: non_null
+    serialization:
+      write-dates-as-timestamps: false
+
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+      timeout: 2s
+
+server:
+  port: 8080
+  error:
+    include-message: never
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+# Configurações específicas do domínio Biciclo
+app:
+  jwt:
+    # Sem valor padrão: a API não sobe sem JWT_SECRET (mínimo 32 bytes).
+    # O perfil dev define uma chave só para desenvolvimento local.
+    secret: ${JWT_SECRET:}
+    expiration-minutes: ${JWT_EXPIRATION_MINUTES:120}
+  firebase:
+    service-account-path: ${FIREBASE_SERVICE_ACCOUNT_PATH:}
+
+  cors:
+    # Origens separadas por vírgula. Nunca use "*" em produção.
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:4200}
+  admin:
+    # E-mails promovidos a ADMIN no login (separados por vírgula).
+    emails: ${ADMIN_EMAILS:}
+  overpass:
+    url: ${OVERPASS_URL:https://overpass-api.de/api/interpreter}
+    # Região de Florianópolis (sul, oeste, norte, leste).
+    bbox: ${OVERPASS_BBOX:-27.85,-48.62,-27.38,-48.35}
+    timeout-segundos: 60
+  google-places:
+    # Chave do Google Cloud com a "Places API (New)" ativada e restrita a ela.
+    # Vazia: GET /api/v1/oficinas responde 503 e o resto da API segue normal.
+    api-key: ${GOOGLE_PLACES_API_KEY:}
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html

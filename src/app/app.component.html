@@ -1,9 +1,0 @@
-<div class="app-shell" [class.no-chrome]="!mostrarNav">
-  @if (mostrarNav) {
-    <app-top-nav class="desktop-only"></app-top-nav>
-  }
-  <router-outlet></router-outlet>
-  @if (mostrarNav) {
-    <app-bottom-nav class="mobile-only"></app-bottom-nav>
-  }
-</div>

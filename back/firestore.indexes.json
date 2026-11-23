@@ -1,0 +1,103 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "pontos_interesse",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ativo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "geohash",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "pontos_interesse",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "tipo",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "ativo",
+          "order": "ASCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "trajetos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ciclistaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "cupons",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ciclistaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "dataResgate",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "extrato_pontos",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ciclistaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "alertas_infraestrutura",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "status",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "alertas_infraestrutura",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "ciclistaId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
