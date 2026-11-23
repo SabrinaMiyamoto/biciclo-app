@@ -1,0 +1,8 @@
+logging:
+  level:
+    com.biciclo: DEBUG
+
+app:
+  jwt:
+    # Chave exclusiva para desenvolvimento local. Em produção use JWT_SECRET.
+    secret: ${JWT_SECRET:chave-de-desenvolvimento-local-nao-usar-em-producao-0123456789}
